@@ -31,42 +31,23 @@ Case #2: true
 Case #3: true
 Case #4: false
 
-#include <stdio.h>
-#include <stdlib.h>
 
-int comparison(long a, long b, long c)
-{
-	if (a + b > c)
-		return 1;
-	else
-		return 0;
-}
+#include <iostream>
+using namespace std;
 
-int main()
-{
-	int T, i;
-	long a, b, c;
-	char *p = NULL;
-
-	scanf("%d", &T);
-	p = (char *)malloc(T * sizeof(char));
-
-	for (i = 0; i < T; i++)
-	{
-		scanf("%ld %ld %ld", &a, &b, &c);
-
-		if (comparison(a, b, c) == 1)
-			p[i] = 1;
-		else
-			p[i] = 0;
-	}
-
-	for (i = 0; i < T; i++)
-	{
-		if(p[i] == 1)
-			printf("Case #%d: true\n", i + 1);
-		else
-			printf("Case #%d: false\n", i + 1);
-	}
-	return 0;
+int main() {
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        long long int a, b, c;
+        cin >> a >> b >> c;
+        cout << "Case #" << i + 1 << ": ";
+        if (a + b > c) {
+            cout << "true";
+        } else {
+            cout << "false";
+        }
+        cout << endl;
+    }
+    return 0;
 }
